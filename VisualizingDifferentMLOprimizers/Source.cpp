@@ -59,7 +59,7 @@ public:
 
 	bool OnUserUpdate(float fElapsedTime) override
 	{
-		olc::vf2d gradient = { (float)GetMouseX() - parameters.x, (float)GetMouseY() - parameters.y };
+		olc::vf2d gradient = { GetMouseX() - parameters.x, GetMouseY() - parameters.y };
 		if (GetKey(olc::Key::W).bHeld)
 			gradient.y -= 0.2f;
 		if (GetKey(olc::Key::S).bHeld)
@@ -74,8 +74,8 @@ public:
 		}
 
 		{	// momentum
-			//gradientMomentum = momentumBeta * gradientMomentum + (1.0f - momentumBeta) * gradient;
-			//parameters += gradientMomentum * learningRate;
+			/*gradientMomentum = momentumBeta * gradientMomentum + (1.0f - momentumBeta) * gradient;
+			parameters += gradientMomentum * learningRate;*/
 		}
 
 		{	// Adam
